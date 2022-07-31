@@ -1,0 +1,19 @@
+{
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"version": 2,
+	"alias": "sachins602",
+	"cleanUrls": true,
+	"public": true,
+	"regions": ["lhr1"],
+	"redirects": [
+		{ "source": "/calendar", "destination": "https://cal.com/sachins602" },
+		{ "source": "/cv", "destination": "https://read.cv/sachins602" },
+		{ "source": "/github", "destination": "https://github.com/sachins602" },
+		{ "source": "/linkedin", "destination": "https://www.linkedin.com/sachins602" },
+		{ "source": "/meeting", "destination": "https://cal.com/sachins602" },
+		{ "source": "/portfolio", "destination": "/projects" },
+		{ "source": "/resume", "destination": "https://read.cv/sachins602" },
+		{ "source": "/schedule", "destination": "https://cal.com/sachins602" },
+		{ "source": "/twitter", "destination": "https://twitter.com/sachins602" }
+	]
+}
