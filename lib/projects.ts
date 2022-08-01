@@ -39,14 +39,14 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
 		.map((repo) => {
 			
 			
-			// if (!repo.topics.includes('portfolio')) return null;
+			if (repo.topics.includes('portfolio')) return null;
 
 			if (repo.archived) return null;
 
 			// Strip the emoji suffix from the repo description
-			// const trimmedDescription = repo.description.split(' ');
-			// trimmedDescription.shift();
-			// const description = trimmedDescription.join(' ');
+			const trimmedDescription = repo.description.split(' ');
+			trimmedDescription.shift();
+			const description = trimmedDescription.join(' ');
 
 			// Check if there is a matching blog post to attach
 			const repoPost =
@@ -56,7 +56,7 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
 				);
 				
 			return {
-				//description,
+				description,
 				icon: (() => {
 					if (!repo.description) return undefined;
 
