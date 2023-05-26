@@ -31,7 +31,7 @@ const ACTIONS: Array<NavigationItem> = [
 
 export default function HomePage() {
 	const today = new Date();
-	const birthday = new Date('2000-09-04');
+	const birthday = new Date('1999-09-04');
 	const age = differenceInYears(today, birthday);
 	const isBirthday = isSameDay(today, birthday) && isSameMonth(today, birthday);
 
@@ -40,16 +40,15 @@ export default function HomePage() {
 	return (
 		<Layout.Default>
 			{isBirthday && <Event event={EventType.BIRTHDAY} />}
-			<div className="min-h-screen flex items-center justify-center py-12">
-				<div className="max-w-md sm:max-w-lg md:sm:max-w-2xl lg:sm:max-w-3xl w-full space-y-8 text-center">
+			<div className="flex items-center justify-center min-h-screen py-12">
+				<div className="w-full max-w-md space-y-8 text-center sm:max-w-lg md:sm:max-w-2xl lg:sm:max-w-3xl">
 					<Animate
 						as="h1"
 						animation={{
 							opacity: [0, 1],
 							scale: [0.75, 1],
 						}}
-						className="text-gray-500 dark:text-white text-5xl sm:text-6xl md:text-6xl lg:text-8xl tracking-tight font-extrabold"
-					>
+						className="text-5xl font-extrabold tracking-tight text-gray-500 dark:text-white sm:text-6xl md:text-6xl lg:text-8xl">
 						Hey <span className="inline-block origin-70 hover:(animate-wave)">👋</span>{' '}
 						I&apos;m Sachin, <br className="hidden sm:block" />a{' '}
 						<Pill.Standard className="mt-4">developer</Pill.Standard>
@@ -61,15 +60,14 @@ export default function HomePage() {
 							opacity: [0, 1],
 							scale: [0.75, 1],
 						}}
-						className="max-w-xs mt-4 md:mt-8 mx-auto text-base text-gray-300 sm:text-lg md:text-xl md:max-w-3xl"
+						className="max-w-xs mx-auto mt-4 text-base text-gray-300 md:mt-8 sm:text-lg md:text-xl md:max-w-3xl"
 						transition={{
 							delay: 0.5,
-						}}
-					>
+						}}>
 						{description}
 					</Animate>
 
-					<div className="flex flex-col sm:flex-row items-center justify-center sm:space-x-4 space-y-4 sm:space-y-0 w-full mt-8 sm:mt-4">
+					<div className="flex flex-col items-center justify-center w-full mt-8 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 sm:mt-4">
 						{ACTIONS.map((action, index) => {
 							if (action.type !== NavigationItemType.LINK) return null;
 
@@ -83,8 +81,7 @@ export default function HomePage() {
 									key={index}
 									transition={{
 										delay: 0.1 * (index + 2) + 0.5,
-									}}
-								>
+									}}>
 									<Button.Outline href={action.href}>
 										{action.icon}
 										<span>{action.text}</span>
